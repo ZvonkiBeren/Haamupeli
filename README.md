@@ -1,2 +1,1 @@
-# Haamupeli
-Only some people know
+# Haamupeli_Tiistai_k2025
