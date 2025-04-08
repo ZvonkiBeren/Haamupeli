@@ -1,9 +1,14 @@
+<<<<<<< HEAD
 let BOARD_SIZE = 20;
 const cellSize = calculateCellSize();
+=======
+let BOARD_SIZE = 12;
+>>>>>>> 03b5e9c6dc1f5d08599086ef13e3b24f9a2fdf2d
 let board;
 
 document.getElementById("new-game-btn").addEventListener('click',startGame);
 
+<<<<<<< HEAD
 function calculateCellSize() {
     // Otetaan talteen pienempi luku ikkunan leveydestä ja korkeudesta
     const screenSize = Math.min(window.innerWidth, window.innerHeight);
@@ -14,6 +19,8 @@ function calculateCellSize() {
     return (gameBoardSize / BOARD_SIZE);
     }
 
+=======
+>>>>>>> 03b5e9c6dc1f5d08599086ef13e3b24f9a2fdf2d
 function startGame(){
     console.log("KLIKATTU");
     document.getElementById("intro-screen").style.display='none';
@@ -25,6 +32,7 @@ function startGame(){
 function generateRandomBoard(){
     const newBoard = Array.from({length: BOARD_SIZE}, ()=> Array(BOARD_SIZE).fill(' '));
     console.log(newBoard);
+<<<<<<< HEAD
     //tehdän ulkoseinät
 
     for(let y = 0; y < BOARD_SIZE; y++){
@@ -38,12 +46,25 @@ function generateRandomBoard(){
     //newBoard[19][7] = 'P';
     const [playerX, playerY] = randomEmptyPosition(newBoard);
     setCell(newBoard, playerX, playerY,'P')
+=======
+
+    for(let y = 0; y < BOARD_SIZE; y++){
+         for(let x = 0; x < BOARD_SIZE; x ++){
+            if(y == 0|| y == BOARD_SIZE-1 || x==0 || x== BOARD_SIZE-1){
+                 newBoard[y][x]='W'
+            }
+
+
+         }
+    }
+>>>>>>> 03b5e9c6dc1f5d08599086ef13e3b24f9a2fdf2d
     return newBoard;
 }
 
 function drawBoard(board){
     const gameBoard = document.getElementById('game-board');
 
+<<<<<<< HEAD
     const cellSize = calculateCellSize();
 
     gameBoard.style.gridTemplateColumns = `repeat(${BOARD_SIZE}, 1fr)`;
@@ -130,4 +151,18 @@ function setCell(board, x, y, value) {
 //Palautetaan solun sisältö
 function getCell(board, x, y) {
        return board[y][x];
+=======
+    gameBoard.style.gridTemplateColumns = `repeat(${BOARD_SIZE}, 1fr)`;
+
+    for(let y = 0; y < BOARD_SIZE; y++){
+        for(let x = 0; x < BOARD_SIZE; x ++){
+           const cell = document.createElement('div');
+           cell.classList.add('cell');
+           if(board[y][x]=='W'){
+            cell.classList.add('wall');
+
+           }
+        }
+    }
+>>>>>>> 03b5e9c6dc1f5d08599086ef13e3b24f9a2fdf2d
 }
